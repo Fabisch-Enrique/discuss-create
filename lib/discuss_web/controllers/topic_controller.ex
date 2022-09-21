@@ -56,6 +56,13 @@ defmodule DiscussWeb.TopicController do
     render(conn, "show.html", topic: topic)
   end
 
+  def delete(conn, %{"id" => topic_id}) do
+
+    {:ok, _} = Topic.delete(topic_id)
+    conn
+    |> redirect(to: Routes.topic_path(conn, :index))
+  end
+
 
 
 end
