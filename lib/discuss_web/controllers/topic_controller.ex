@@ -51,9 +51,11 @@ defmodule DiscussWeb.TopicController do
     render(conn, "form.html", [changeset: changeset, processor: Routes.topic_path(conn, :update, topic)])
   end
 
-  def show(conn, _params) do
-    conn
+  def show(conn, %{"id" => topic_id}) do
+    topic = Topic.get(topic_id)
+    render(conn, "show.html", topic: topic)
   end
+
 
 
 end
