@@ -2,7 +2,7 @@ defmodule Discuss.Topic  do
   use Ecto.Schema
 
   import Ecto.Changeset
-  
+
   alias Discuss.Repo
 
   schema "topics" do
@@ -12,7 +12,7 @@ defmodule Discuss.Topic  do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:title])
-    |> validate_required([:title])
+    |> validate_length(:title, min: 4, max: 100)
   end
 
   def list do

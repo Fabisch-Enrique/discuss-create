@@ -1,11 +1,10 @@
+<h3>List of My Topics</h3>
+
 
 <%= link("New", to: Routes.topic_path(@conn, :new))%>
 <%= for topic <- @topics do %>
 
 <li>
- 
-    
-
     <%= link(to: Routes.topic_path(@conn, :show, topic)) do%>
     <button><%= topic.title%></button>
     <% end %>
