@@ -2,7 +2,7 @@ defmodule Discuss.Topic  do
   use Ecto.Schema
 
   import Ecto.Changeset
-
+  
   alias Discuss.Repo
 
   schema "topics" do

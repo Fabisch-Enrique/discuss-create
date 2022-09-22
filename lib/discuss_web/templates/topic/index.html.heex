@@ -1,5 +1,14 @@
+
+<%= link("New", to: Routes.topic_path(@conn, :new))%>
 <%= for topic <- @topics do %>
 
-<li><%= caps(topic.title) %></li>
+<li>
+ 
+    
+
+    <%= link(to: Routes.topic_path(@conn, :show, topic)) do%>
+    <button><%= topic.title%></button>
+    <% end %>
+</li>
 
 <%end%>

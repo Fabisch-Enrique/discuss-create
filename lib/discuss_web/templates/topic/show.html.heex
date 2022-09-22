@@ -1,2 +1,5 @@
 
-<%= @topic.title%>
+<%= @topic.title %>
+
+<%= link("Edit", to: Routes.topic_path(@conn, :edit, @topic))%>
+<%= link("Delete", to: Routes.topic_path(@conn, :delete, @topic))%>
